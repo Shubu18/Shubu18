@@ -1,0 +1,39 @@
+{% include "header.html" %}
+
+<!-- Page Header-->
+<header class="masthead" style="background-image: url({{ url_for('static', filename='img/bg.jpg') }})">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="site-heading">
+                    <h1>ChatBot</h1>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container">
+    <div class="">
+        <div class="col">
+            <h3>Responses:</h3>
+
+            <ul id="i">
+                {% for data in datas %}
+                    <li>{{ data }}</li>
+                {% endfor %}
+            </ul>
+            <form action="/ChatBot"  method="post">
+                <div class="mb-3">
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="aa">
+                    <div id="emailHelp" class="form-text">You can use TextBox for any kind of Question.</div>
+                </div>
+<!--                <div class="spinner-border" role="status">-->
+<!--  <span class="sr-only">Loading...</span>-->
+<!--</div>-->
+                <button type="submit" class="btn btn-primary"  >Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% include "footer.html" %}
