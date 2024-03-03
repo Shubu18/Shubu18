@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 import google.generativeai as genai
 
-genai.configure(api_key="")
+genai.configure(api_key="afdas")
 
 app = Flask(__name__)
 
